@@ -85,7 +85,7 @@ const Product = () => {
     }
   };
   //######### get product ########
- 
+
   const getKurs = async () => {
     try {
       const res = await Api.get("/master/api/v1/product");
@@ -97,7 +97,7 @@ const Product = () => {
       console.error("Error reason:", err);
     }
   };
- 
+
   const handelDel = async (id) => {
     try {
       const res = await Api.delete(`/master/api/v1/product/${id}`);
@@ -131,7 +131,7 @@ const Product = () => {
   //######Log #####
   return (
     <>
-      <div className="m-7 lg:w-full w-full text-black">
+      <div className="m-7 lg:w-full w-full ">
         <div className="py-5">
           <Typography
             variant="h3"
@@ -148,9 +148,9 @@ const Product = () => {
               </h3>
             </div>
 
-            <div className=" mb-7 px-5">
-              <div className="grid grid-cols-1 lg:grid-cols-1 lg:gap-20">
-                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20">
+            <div className="  px-5">
+              <div className="grid grid-cols-1 lg:grid-cols-1 ">
+                <div className="grid grid-cols-1 lg:grid-cols-2  pb-5">
                   <div>
                     <label className="mb-2 md:text-lg text-gray-400">
                       Category
@@ -162,9 +162,10 @@ const Product = () => {
                       name="category"
                       control={control}
                       defaultValue=""
+                      className="text-white"
                       rules={{ required: true }}
                       render={({ field }) => (
-                        <Select {...field} color="blue" label="">
+                        <Select {...field} className="text-white">
                           {category.map((option) => (
                             <Option key={option} value={option}>
                               {option}
@@ -176,7 +177,7 @@ const Product = () => {
                     {errors.category && <p>Categorye is required</p>}
                   </div>
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-20">
+                <div className="grid grid-cols-1 lg:grid-cols-2 pb-5 ">
                   <div>
                     <label className=" md:text-md  text-gray-200">Size</label>
                   </div>
@@ -186,9 +187,10 @@ const Product = () => {
                       name="size"
                       control={control}
                       defaultValue=""
+                      className="text-white"
                       rules={{ required: true }}
                       render={({ field }) => (
-                        <Select {...field} color="blue" label="">
+                        <Select {...field} className="text-white">
                           {size.map((option) => (
                             <Option key={option} value={option}>
                               {option}
@@ -201,106 +203,98 @@ const Product = () => {
                   </div>
                 </div>
 
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-1 md:grid-cols-2 pb-5">
                   <label className=" md:text-md  text-gray-200">Price</label>
-                  <div className="w-[46%]">
-                    <input
+                  <div className="">
+                    <Input
                       type="number"
                       {...register("price", {
                         required: true,
                       })}
-                      color="blue"
-                      className="border  w-[46%] text-gray-800
-                 rounded w-"
-                      label=" Price"
+                      className="text-white"
                     />
 
                     {errors.price && <p>Price is required and must be valid</p>}
                   </div>
                 </div>
 
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-1 md:grid-cols-2 pb-5">
                   <label className=" md:text-md  text-gray-100">Discount</label>
-                  <div className="w-[46%]">
-                    <input
+                  <div className="">
+                    <Input
                       type="number"
                       {...register("discount")}
-                      color="blue"
-                      className="border  w-[46%] text-gray-800
-                 rounded w-"
-                      label=" discount"
+                      className="text-white"
                     />
                   </div>
                 </div>
 
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-1 lg:grid-cols-2 pb-5 ">
                   <label className=" md:text-md  text-gray-100">Detail</label>
-                  <div className="w-[46%]">
-                    <input
+                  <div className="">
+                    <Input
                       type="text"
                       {...register("detail", {})}
                       color="blue"
-                      className="border w-[46%]  text-gray-800
-                 rounded w-"
+                      className="border   text-white w-"
                       label=""
                     />
                   </div>
                 </div>
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-1 lg:grid-cols-2 pb-5 ">
                   <label className=" md:text-md  text-gray-100">Chest</label>
-                  <div className="w-[46%]">
-                    <input
+                  <div className="">
+                    <Input
                       type="text"
                       {...register("chest", {})}
                       color="blue"
-                      className="border w-[46%]  text-gray-800
-                 rounded w-"
+                      className="border   text-white
+                 "
                       label=""
                     />
                   </div>
                 </div>
 
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-1 lg:grid-cols-2 pb-5 ">
                   <label className=" md:text-md  text-gray-100">Height</label>
-                  <div className="w-[46%]">
-                    <input
+                  <div className="">
+                    <Input
                       type="text"
                       {...register("height", {})}
                       color="blue"
-                      className="border w-[46%]  text-gray-800
-                 rounded w-"
+                      className="border   text-white w-"
                       label=""
                     />
                   </div>
                 </div>
 
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-1 lg:grid-cols-2 pb-5 ">
                   <label className=" md:text-md  text-gray-100">
                     Shipping Charge In Dhaka
                   </label>
-                  <div className="w-[46%]">
-                    <input
+                  <div className="">
+                    <Input
                       type="number"
                       {...register("shipping", {})}
                       color="blue"
-                      className="border w-[46%]  text-gray-800
-                 rounded w-"
+                      className="border   text-white
+              "
                       label=""
                     />
                   </div>
                 </div>
 
-                <div className="flex justify-between ">
+                <div className="grid grid-cols-1 lg:grid-cols-2 pb-5 ">
                   <label className=" md:text-md  text-gray-100">
                     Shipping Charge Out Dhaka
                   </label>
-                  <div className="w-[46%]">
-                    <input
+                  <div className="">
+                    <Input
                       type="number"
                       {...register("shippingg", {})}
                       color="blue"
-                      className="border w-[46%]  text-gray-800
-                 rounded w-"
+                      className="border   text-white
+               "
                       label=""
                     />
                   </div>
@@ -312,7 +306,7 @@ const Product = () => {
                 Image (size 2000px * 700px)
               </label>
 
-              <div className="w-[46%]">
+              <div className="">
                 <input
                   type="file"
                   {...register("url", {
@@ -337,7 +331,7 @@ const Product = () => {
           </div>
         </form>
 
-        <div className="flex justify-between p-4 text-white ">
+        <div className="flex flex-wrap gap-2 justify-between p-4 text-white ">
           {category.map((catt, i) => (
             <button
               key={i}

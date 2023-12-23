@@ -187,9 +187,9 @@ const Process = () => {
   console.log(taskList);
   //######## log end #######
   return (
-    <div className="">
-      <div className="flex justify-center p-4">
-        <div className="ml-4 w-[300px]">
+    <div className="m-7 lg:w-full w-full ">
+      <div className="flex justify-center p-4  bg-gray-200">
+        <div className="ml-4 w-[300px] bg-blue-400">
           <Search
             placeholder="Customer Email or Mobile"
             allowClear
@@ -239,103 +239,93 @@ const Process = () => {
 
       <section
         id="OrderView"
-        className="px-5 mt-5 flex justify-between items-start border-t pt-5 border-[#858585]"
+        className="px-5 my-5  border-t pt-5 border-[#858585]"
       >
-        <div className="w-[40%]">
-          <Row gutter={[16, 16]}>
-            <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-              <Card title="Customer Information">
-                <p>
-                  {" "}
-                  <span className="font-bold">Customer: </span>
-                  {orderInfo?.customerData?.name}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold">Contact:</span>{" "}
-                  {orderInfo?.customerData?.mobile}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold">Status:</span>{" "}
-                  {orderInfo?.orderStatus}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold">Item:</span>{" "}
-                  {orderInfo?.products?.length}
-                </p>
-              </Card>
-            </Col>
-            <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-              <Card title="Address">
-                <p>
-                  {" "}
-                  <span className="font-bold"> Address: </span>{" "}
-                  {orderInfo?.customerData?.addrerss}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold">Area: </span>{" "}
-                  {orderInfo?.customerData?.area}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold"> City: </span>{" "}
-                  {orderInfo?.customerData?.division}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold"> Date: </span>{" "}
-                  {orderInfo?.createdAt?.split("T")[0]}
-                </p>
-              </Card>
-            </Col>
-            <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-              <Card title="Payment Information">
-                <p>
-                  {" "}
-                  <span className="font-bold"> Payment:</span>{" "}
-                  {orderInfo?.paymentBy}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold"> Status:</span>{" "}
-                  {orderInfo?.orderStatus}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold"> Paid Status:</span>{" "}
-                  {orderInfo?.paidStatus ? "YES" : "NO"}
-                </p>
-              </Card>
-            </Col>
-            <Col xs={24} sm={24} md={12} lg={8} xl={8}>
-              <Card title="Cash Information">
-                <p>
-                  {" "}
-                  <span className="font-bold"> Delivery Fee:</span>{" "}
-                  {orderInfo?.deliveryFee}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold">Vat:</span> {orderInfo?.vat}
-                </p>
-                <p>
-                  {" "}
-                  <span className="font-bold"> Total price:</span>{" "}
-                  {Math.round(orderInfo?.TotalPrice)} tk
-                </p>
-              </Card>
-            </Col>
-          </Row>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <Card title="Customer Information">
+            <p>
+              {" "}
+              <span className="font-bold">Customer: </span>
+              {orderInfo?.customerData?.name}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold">Contact:</span>{" "}
+              {orderInfo?.customerData?.mobile}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold">Status:</span>{" "}
+              {orderInfo?.orderStatus}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold">Item:</span>{" "}
+              {orderInfo?.products?.length}
+            </p>
+          </Card>
+
+          <Card title="Address">
+            <p>
+              {" "}
+              <span className="font-bold"> Address: </span>{" "}
+              {orderInfo?.customerData?.addrerss}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold">Area: </span>{" "}
+              {orderInfo?.customerData?.area}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold"> City: </span>{" "}
+              {orderInfo?.customerData?.division}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold"> Date: </span>{" "}
+              {orderInfo?.createdAt?.split("T")[0]}
+            </p>
+          </Card>
+
+          <Card title="Payment Information">
+            <p>
+              {" "}
+              <span className="font-bold"> Payment:</span>{" "}
+              {orderInfo?.paymentBy}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold"> Status:</span>{" "}
+              {orderInfo?.orderStatus}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold"> Paid Status:</span>{" "}
+              {orderInfo?.paidStatus ? "YES" : "NO"}
+            </p>
+          </Card>
+
+          <Card title="Cash Information">
+            <p>
+              {" "}
+              <span className="font-bold"> Delivery Fee:</span>{" "}
+              {orderInfo?.deliveryFee}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold">Vat:</span> {orderInfo?.vat}
+            </p>
+            <p>
+              {" "}
+              <span className="font-bold"> Total price:</span>{" "}
+              {Math.round(orderInfo?.TotalPrice)} tk
+            </p>
+          </Card>
         </div>
-        <div className="flex gap-4 flex-wrap  w-[58%]">
+        <div className="pt-5 grid grid-cols-1 md:grid-cols-3 gap-5 ">
           {orderInfo?.products?.map((url, i) => (
-            <Card
-              key={i}
-              className="w-[calc(50%-1rem)] lg:w-[calc(33.333333%-1rem)]"
-            >
+            <Card key={i} className="">
               <img
                 className="w-full h-48"
                 src={`${Api.defaults.baseURL}/uploads/${url?.url[0]}`}
@@ -369,13 +359,13 @@ const Process = () => {
         <p className="py-3 p-1 bg-primary text-white font-bold rounded-md text-center ">
           Order Shipment Process
         </p>
-        <div className=" flex gap-x-10 mt-2">
+        <div className=" flex gap-x-10  flex-wrap text-white mt-2">
           <div className="">
             <p> Order Status</p>
             <select
               name="status"
               onChange={(e) => handelChange(e)}
-              className=" w-[220px] h-10 border rounded-md p-2"
+              className=" w-[220px] bg-black h-10 border rounded-md p-2"
             >
               <option value="Order Placed">Order Placed</option>
               <option value="Processing">Processing</option>
@@ -391,7 +381,7 @@ const Process = () => {
               onChange={(e) => handelChange(e)}
               type="text"
               name="reason"
-              className=" w-[220px] h-10 border rounded-md p-2"
+              className=" w-[220px] bg-black h-10 border rounded-md p-2"
             />
           </div>
           <div className="">
@@ -400,7 +390,7 @@ const Process = () => {
               onChange={(e) => handelChange(e)}
               type="text"
               name="courier"
-              className=" w-[220px] h-10 border rounded-md p-2"
+              className=" w-[220px] bg-black h-10 border rounded-md p-2"
             />
           </div>
           <div className="">
@@ -409,7 +399,7 @@ const Process = () => {
               onChange={(e) => handelChange(e)}
               type="text"
               name="courierLocation"
-              className=" w-[220px] h-10 border rounded-md p-2"
+              className=" w-[220px] bg-black  h-10 border rounded-md p-2"
             />
           </div>
           <div className="">
@@ -418,7 +408,7 @@ const Process = () => {
               onChange={(e) => handelChange(e)}
               type="text"
               name="courierPhone"
-              className=" w-[220px] h-10 border rounded-md p-2"
+              className=" w-[220px] bg-black h-10 border rounded-md p-2"
             />
           </div>
           <div className="">
@@ -427,13 +417,13 @@ const Process = () => {
               onChange={(e) => handelChange(e)}
               type="text"
               name="courierMan"
-              className=" w-[220px] h-10 border rounded-md p-2"
+              className=" w-[220px] bg-black h-10 border rounded-md p-2"
             />
           </div>
         </div>
         <button
           onClick={submitData}
-          className=" w-[220px] border rounded-xl py-2 mt-5"
+          className=" w-[220px] border text-white rounded-xl py-2 mt-5"
         >
           Submit
         </button>

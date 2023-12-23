@@ -99,7 +99,7 @@ const Banner = () => {
   //############### useEff######
 
   return (
-    <div>
+    <div className="m-7 lg:w-full w-[60%]">
       <div className="m-7 lg:w-full w-[60%] text-white">
         <div className="py-5">
           <Typography
