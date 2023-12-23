@@ -1,0 +1,124 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Submission</title>
+</head>
+<body>
+  <form action="/submit" method="post">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+    />
+    <title>Order Confirmation</title>
+  </head>
+
+  <body class="font-sans text-gray-800">
+    <div class="my-1 p-2 border-b-2 border-slate-300">
+      <h3
+        class="py-1 text-4xl font-bold italic text-center text-transparent bg-gradient-to-r from-purple-500 from-10% via-pink-500 via-20% to-yellow-500 to-70% bg-clip-text"
+      >
+        Your order is on ITs way...
+      </h3>
+      <p>
+        We have carefully packaged your order and sent it straight to you. Wait
+        for a message from the delivery service regarding the exact time.<br />
+        — The Menz Team.
+      </p>
+    </div>
+    <!-- order info -->
+    <div class="flex items-center justify-center">
+      <div class="mb-4">
+        <p>
+          <strong>Order Id:</strong>
+          <%= order?._id %>
+        </p>
+        <p>
+          <% if (order && order?.createdAt) { %>
+          <strong>Order Date:</strong>
+          <span> <%= order?.createdAt %> </span>
+          <% } %>
+        </p>
+      </div>
+      <img src="/image/logo.png" class="h-36 w-44 object-contain" />
+    </div>
+
+    <div class="mb-4">
+      <h3 class="text-lg font-semibold">Customer Details</h3>
+      <p>
+        <strong>Name:</strong>
+        <%= order?.customerData?.name %>
+      </p>
+      <p>
+        <strong>Contact Number:</strong>
+        <%= order?.customerData?.mobile %>
+      </p>
+      <p>
+        <strong>Address:</strong>
+        <%= order?.customerData?.address %>, <%= order?.customerData?.area %>,
+        <%= order?.customerData?.city %>
+      </p>
+    </div>
+
+    <div>
+      <h3 class="text-lg font-semibold">The item you ordered</h3>
+      <table class="w-full mt-4">
+        <thead>
+          <tr>
+            <th class="text-left">Image Link</th>
+            <th class="text-left">Name</th>
+            <th class="text-left">Quantity</th>
+            <th class="text-left">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% order?.products?.forEach((product) => { %>
+          <tr>
+            <!-- Assuming product?.url[0] contains the URL of the image -->
+            <td class="text-left">
+              <a
+                class="cursor-pointer"
+                href="<%=`${process.env.SERVER_URL}/uploads/${product?.url[0]}` %>"
+                style="max-width: 100px; max-height: 100px"
+                >Click</a
+              >
+            </td>
+            <td class="text-left"><%= product?.name %></td>
+            <td class="text-left"><%= product?.quantity %></td>
+            <td class="text-left">৳<%= (product?.price ) %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="mt-4">Vat/Tax 15% : ৳<%= Math.round(order?.vat) %></p>
+    <p>Delivery Fee : ৳<%= order?.deliveryFee %></p>
+
+    <div class="mt-6">
+      <p class="text-lg">
+        <strong>Grand Total:</strong> ৳<%= (order?.TotalPrice) %>
+      </p>
+    </div>
+    <!-- 
+    <script src="https://cdn.tailwindcss.com/versions/TAILWIND_VERSION/tailwind.css"></script> -->
+  </body>
+</html>
