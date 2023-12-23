@@ -34,11 +34,11 @@ const Order = () => {
   //####### filter end ##################
 
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="m-7 lg:w-full w-full ">
       <h2 className="text-3xl my-10 font-semibold bg-primary text-white py-3 px-5 font-serif">
         Orders
       </h2>
-      <div className="flex md:flex-nowrap flex-wrap justify-average gap-5">
+      <div className="flex  text-white  flex-wrap justify-average gap-5">
         <div className="text-center text-lg border-primary border-2 rounded w-[200px] py-8 px-5">
           <p>Total Orders</p>
           <p className="text-4xl mt-3 font-semibold">{orders?.length}</p>
@@ -71,12 +71,12 @@ const Order = () => {
       </div>
       {/* Order Procesing */}
 
-      <h2 className="text-3xl my-10 font-semibold bg-primary text-white py-2 px-5 font-serif ">
+      <h2 className="text-3xl my-10 font-semibold bg-primary underline text-white py-2 px-5 font-serif ">
         OrderProcess
       </h2>
 
       {/* orderTable Started */}
-      <div className=" flex justify-between ">
+      <div className=" flex flex-wrap gap-3 text-white justify-between ">
         <p
           onClick={() => setOdd(ifLess)}
           className=" border py-1 px-3 transition-colors rounded-md cursor-pointer hover:border-primary hover:text-primary"
@@ -113,7 +113,7 @@ const Order = () => {
           More Orders
         </p>
       </div>
-      <div className=" mt-8 md:grid-cols-2 grid-cols-1 ">
+      <div className=" mt-8 text-white ">
         <OrderTable orders={odd}></OrderTable>
       </div>
       <div className="mt-10 ">

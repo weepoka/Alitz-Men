@@ -119,12 +119,12 @@ const Sidebar = () => {
   const admin = useSelector((state) => state?.orebiReducer?.adminInfo);
 
   return (
-    <div className="min-h-screen  bg-DarkNevy ">
+    <div className="min-h-screen  bg-[#004071] ">
       <div className="flex">
         <div
           className={` ${
             open ? " w-[250px]" : "w-20 "
-          } bg-DarkNevy  min-h-screen   p-5  pt-8 relative duration-300`}
+          } bg-[#004071]  min-h-screen   p-5  pt-8 relative duration-300`}
         >
           <img
             src={control}
@@ -146,7 +146,7 @@ const Sidebar = () => {
                 !open && "scale-0"
               }`}
             >
-              IELTS
+              Menz
             </h1>
           </div>
           <div className="flex flex-col gap-x-4 items-center mt-5">
@@ -162,7 +162,7 @@ const Sidebar = () => {
                 !open && "scale-0"
               }`}
             >
-              ATM's
+              Elits
             </h1>
           </div>
           <ul className="pt-6">

@@ -76,7 +76,7 @@ const SignIn = () => {
             {/* <img src={logoLight} alt="logoImg" className="w-28" /> */}
             <div className="flex">
               {/* <Image className="w-20 object-cover" imgSrc={logo} /> */}
-              <h1 className="text-3xl font-extrabold"> Alit Menz</h1>
+              <h1 className="text-3xl font-extrabold">KinBay</h1>
               <BsFillChatLeftDotsFill className="" />
             </div>
           </Link>
@@ -92,12 +92,11 @@ const SignIn = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Get started fast with Alit Menz
+                Get started fast with KinBay
               </span>
               <br />
-              Discover the latest fashion trends, explore exclusive deals, and
-              Your fashion journey begins here—get started fast with Alit Menz
-              shopping site.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
+              nisi dolor recusandae consectetur!
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
@@ -106,12 +105,11 @@ const SignIn = () => {
             </span>
             <p className="text-base text-gray-300">
               <span className="text-white font-semibold font-titleFont">
-                Access all Alit Menz services
+                Access all KinBay services
               </span>
               <br />
-              Navigate through our intuitive interface and discover the joy of
-              shopping with just a few clicks. Alit Menz brings you an array of
-              choices that reflect your unique style.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
+              nisi dolor recusandae consectetur!
             </p>
           </div>
           <div className="w-[300px] flex items-start gap-3">
@@ -123,14 +121,11 @@ const SignIn = () => {
                 Trusted by online Shoppers
               </span>
               <br />
-              Alit Menz – Trusted by Online Shoppers. Elevate your online
-              shopping experience with confidence. Join the community of savvy
-              consumers who rely on Alit Menz for a secure and reliable
-              platform. Alit Menz is your trusted destination for seamless and
-              secure online shopping.
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab omnis
+              nisi dolor recusandae consectetur!
             </p>
           </div>
-          {/* <div className="flex items-center justify-between mt-10">
+          <div className="flex items-center justify-between mt-10">
             <Link to="/">
               <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
                 © KinBay
@@ -145,7 +140,7 @@ const SignIn = () => {
             <p className="text-sm font-titleFont font-semibold text-gray-300 hover:text-white cursor-pointer duration-300">
               Security
             </p>
-          </div> */}
+          </div>
         </div>
       </div>
       <div className="w-full lgl:w-1/2 h-full">

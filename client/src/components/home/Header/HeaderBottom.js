@@ -40,14 +40,10 @@ const HeaderBottom = () => {
         ?.toLowerCase()
         .includes(lowerCaseQuery);
       const priceMatch = item?.price?.toString()?.includes(lowerCaseQuery);
-      const discountMatch = item?.discount
-        ?.toString()
-        ?.includes(lowerCaseQuery);
+      const discountMatch = item?.discount?.toString()?.includes(lowerCaseQuery);
       const detailMatch = item?.detail?.toLowerCase()?.includes(lowerCaseQuery);
       const sizeMatch = item?.size?.toLowerCase()?.includes(lowerCaseQuery);
-      const saleCountMatch = item?.saleCount
-        ?.toString()
-        ?.includes(lowerCaseQuery);
+      const saleCountMatch = item?.saleCount?.toString()?.includes(lowerCaseQuery);
 
       return (
         categoryMatch ||
@@ -171,11 +167,11 @@ const HeaderBottom = () => {
             )}
           </div>
           <div className="flex gap-4 mt-2 lg:mt-0 items-center pr-6 cursor-pointer relative">
-            {/* <div onClick={() => setShowUser(!showUser)} className="flex">
+            <div onClick={() => setShowUser(!showUser)} className="flex">
               <FaUser />
               <FaCaretDown />
-            </div> */}
-            {/* {showUser && (
+            </div>
+            {showUser && (
               <motion.ul
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
@@ -199,7 +195,7 @@ const HeaderBottom = () => {
                   Others
                 </li>
               </motion.ul>
-            )} */}
+            )}
             <Link to="/cart">
               <div className="relative">
                 <FaShoppingCart />

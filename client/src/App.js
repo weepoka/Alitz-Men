@@ -29,11 +29,6 @@ import Order from "./pages/Admin/Order";
 import Product from "./pages/Admin/Product";
 import Contacto from "./pages/Admin/Contact";
 import Process from "./pages/Admin/Process";
-import Privacy from "./pages/Privacy/Privacy";
-import TermAndCondition from "./pages/TermAndCondition/TermAndCondition";
-import DeliveryPolicy from "./pages/DeliveryPolicy/DeliveryPolicy";
-import ReturnsandExchanges from "./pages/ReturnsandExchanges/ReturnsandExchanges";
-import TermandCondition from "./pages/TermAndCondition/TermAndCondition";
 
 const Layout = () => {
   useEffect(() => {
@@ -89,22 +84,12 @@ const router = createBrowserRouter(
         </Route>
         <Route path="/about" element={<About />}></Route>
         <Route path="/contact" element={<Contact />}></Route>
-        {/* <Route path="/journal" element={<Journal />}></Route> */}
+        <Route path="/journal" element={<Journal />}></Route>
         {/* ==================== Header Navlink End here ===================== */}
         <Route path="/offer" element={<Offer />}></Route>
         <Route path="/product/:pid" element={<ProductDetails />}></Route>
         <Route path="/cart" element={<Cart />}></Route>
         <Route path="/paymentgateway" element={<Payment />}></Route>
-        <Route path="/privacy" element={<Privacy />}></Route>
-        <Route
-          path="/Term_and_Condition"
-          element={<TermandCondition />}
-        ></Route>
-        <Route path="/Delivery_Privacy" element={<DeliveryPolicy />}></Route>
-        <Route
-          path="/Return_and_Exchanges"
-          element={<ReturnsandExchanges />}
-        ></Route>
       </Route>
       <Route path="/admin" element={<Layout />}>
         <Route index element={<SignUp />}></Route>
@@ -122,9 +107,9 @@ const router = createBrowserRouter(
 );
 
 function App() {
-  // id="my-app"
   return (
     <div className="font-bodyFont">
+      {/* id="my-app" */}
       <RouterProvider router={router} />
     </div>
   );

@@ -32,7 +32,7 @@ const AdminChecker = () => {
     getAdmin();
   }, []);
 
-  return <div>Admin Checker</div>; // You can customize this component as needed
+  return <div className="hidden">Admin Checker</div>; // You can customize this component as needed
 };
 
 export default AdminChecker;

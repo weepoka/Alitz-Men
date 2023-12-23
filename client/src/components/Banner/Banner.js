@@ -126,7 +126,7 @@ const Banner = () => {
           (url, i) =>
             url?.position === "Home" && (
               <Link to="/offer">
-                <div className=" relative " key={i}>
+                <div className=" relative ">
                   <Image imgSrc={url?.url} />
                   <div className=" absolute top-[40%]  left-[12%]">
                     <h3 className=" text-white text-xl font-semibold">

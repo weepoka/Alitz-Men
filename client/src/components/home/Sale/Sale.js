@@ -28,11 +28,11 @@ const Sale = () => {
       <div className="w-full md:w-2/3 lg:w-1/2 h-full">
         <Link to="/shop">
           {banDataa?.map(
-            (url, index) =>
+            (url) =>
               url?.position === "Jersey" && (
-                <div className="relative" key={index}>
+                <div className="relative">
                   <Image
-                    className="h-full w-full object-cover rounded-md"
+                    className="h-full w-full object-cover"
                     imgSrc={url?.url}
                   />
                   <div className=" absolute top-[40%]  left-[12%]">
@@ -56,11 +56,11 @@ const Sale = () => {
         <div className="h-1/2 w-full">
           <Link to="/shop">
             {banDataa?.map(
-              (url, index) =>
+              (url) =>
                 url?.position === "Panjabi" && (
-                  <div className="relative" key={index}>
+                  <div className="relative">
                     <Image
-                      className="h-full w-full object-cover rounded-md"
+                      className="h-full w-full object-cover"
                       imgSrc={url?.url}
                     />
                     <div className=" absolute top-[40%]  left-[12%]">
@@ -83,11 +83,11 @@ const Sale = () => {
         <div className="h-1/2 w-full">
           <Link to="/shop">
             {banDataa?.map(
-              (url, index) =>
+              (url) =>
                 url?.position === "T-shirt " && (
-                  <div className="relative " key={index}>
+                  <div className="relative">
                     <Image
-                      className="h-full w-full object-cover rounded-md"
+                      className="h-full w-full object-cover"
                       imgSrc={url?.url}
                     />
                     <div className=" absolute top-[40%]  left-[12%]">

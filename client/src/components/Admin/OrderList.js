@@ -56,7 +56,7 @@ const OrderList = ({ order, index }) => {
   return (
     <>
       <tr
-        className={`py-5 bg-fourth  hover:bg-[#f2f2f298] border-b  duration-500 sticky-top ${
+        className={`py-5 bg-fourth  text-white border-b  duration-500 sticky-top ${
           index % 2 === 0 ? "even-row" : "odd-row"
         }`}
       >

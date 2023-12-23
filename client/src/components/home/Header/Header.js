@@ -5,7 +5,7 @@ import { HiMenuAlt2 } from "react-icons/hi";
 import { BsFillChatLeftDotsFill } from "react-icons/bs";
 import { motion } from "framer-motion";
 // import { logo, logoLight } from "../../../assets/images/logo.png";
-import logo from "../../../assets/logo/Muslin Logo.jpg";
+import logo from "../../../assets/images/logo.png";
 import Image from "../../designLayouts/Image";
 import { navBarList } from "../../../constants";
 import Flex from "../../designLayouts/Flex";

@@ -156,13 +156,11 @@ const Invoice = ({ order }) => {
                 <img
                   src={logo}
                   alt="logo"
-                  className="w-40 ml-3  logo-for-print max-w-[100px] max-h-[100px]"
+                  className="w-40 ml-3  logo-for-print
+                 "
                 />
               </div>
-              <p>
-                10 Taher Tower Shopping Center,Shop#219,(1st Floor), <br />
-                Gulshan-2,Dhaka-1212., Dhaka, Bangladesh
-              </p>
+              <p>Mirpur Dhaka, Bangladesh</p>
               <p>0123542235</p>
               <p> Date : {date.toLocaleDateString()}</p>
             </div>
@@ -176,7 +174,7 @@ const Invoice = ({ order }) => {
               </p>
             </div>
           </div>
-          <div className="flex justify-between">
+          <div className="flex justify-between border-b">
             <div className="mb-4 my-5">
               <p>
                 <strong>{order?._id ? "Transaction ID" : "Order ID"}:</strong>{" "}
